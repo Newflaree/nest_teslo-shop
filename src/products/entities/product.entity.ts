@@ -1,4 +1,5 @@
 import {
+  BeforeInsert,
   Column,
   Entity,
   PrimaryGeneratedColumn
@@ -45,4 +46,20 @@ export class Product {
   gender: string;
   //tags
   //images
+  //
+  
+  @BeforeInsert()
+  checkSlugInsert() {
+    if ( !this.slug ) {
+      this.slug = this.title
+        .toLowerCase()
+        .replaceAll( ' ', '_' )
+        .replaceAll( "'", '' )
+    } 
+
+    this.slug = this.slug
+      .toLowerCase()
+      .replaceAll( ' ', '_' )
+      .replaceAll( "'", '' )
+  }
 }
