@@ -52,9 +52,6 @@ export class Product {
   })
   tags: string[];
 
-  //images
-  //
-  
   @BeforeInsert()
   checkSlugInsert() {
     if ( !this.slug ) {
