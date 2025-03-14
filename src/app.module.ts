@@ -26,7 +26,5 @@ import { FilesModule } from './files/files.module';
   ],
 })
 export class AppModule {
-  constructor() {
-    console.log( process.env.DB_NAME );
-  }
+  constructor() {}
 }
