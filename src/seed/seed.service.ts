@@ -14,9 +14,11 @@ export class SeedService {
     const seedProducts = initialData.products;
     const insertPromises: any = [];
 
+    /*
     seedProducts.forEach( product => {
       insertPromises.push( this.productsService.create( product ) )
     });
+     * */
 
     await Promise.all( insertPromises );
     return 'SEED EXECUTED'
